@@ -127,21 +127,6 @@
                                 <span class="desc">{{detail?.move_battle_style_preferences?.length > 1 && index != 0 ? `, ${data?.move_battle_style?.name} (low HP: ${data?.low_hp_preference} | high HP: ${data?.high_hp_preference})` : `${data?.move_battle_style?.name} (low HP: ${data?.low_hp_preference} | high HP: ${data?.high_hp_preference})`}}</span>
                             </template>
                         </div>
-                        <div class="mb-4">
-                            <h1 class="title">Sprites</h1>
-                            <span>
-                                <img :src="detail.sprites?.back_default"/>
-                            </span>
-                            <span>
-                                <img :src="detail.sprites?.front_default"/>
-                            </span>
-                            <span>
-                                <img :src="detail.sprites?.back_shiny"/>
-                            </span>
-                            <span>
-                                <img :src="detail.sprites?.front_shiny"/>
-                            </span>
-                        </div>
                     </div>
                 </div>
             </div>
