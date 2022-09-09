@@ -47,11 +47,6 @@ watchEffect( async () => {
     next.value = data.list.next
 })
 
-const result = await fetch(setUrl.value)
-data.list = await result.json()
-next.value = data.list.next
-
-
 const loadMore = async () => {
     if(next.value != null) {
         let newList = await fetch(next.value)
