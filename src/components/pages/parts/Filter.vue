@@ -76,6 +76,7 @@ export default {
 
         const setTypeFunc = (type) => {
             store.commit('pokemon/setType', type)
+            saveToLocalStorage(type)
         }
 
         const result = await fetch(`https://pokeapi.co/api/v2`)
@@ -84,6 +85,10 @@ export default {
 
         const updateFilter = (url) => {
             emit('updateFilter', url)
+        }
+
+        const saveToLocalStorage = (value) => {
+            localStorage.setItem('filter', JSON.stringify(value))
         }
 
         const changeModal = () => {

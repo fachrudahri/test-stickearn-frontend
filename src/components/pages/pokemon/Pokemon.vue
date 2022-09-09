@@ -67,8 +67,8 @@
                         </div>
                         <div class="mb-4">
                             <h1 class="title">Ability</h1>
-                            <template v-for="(data, index) in detail?.abilities" :key="data">
-                                <span class="desc">{{detail?.abilities?.length > 1 && index != 0 ? `, ${data?.ability?.name}` : `${data?.ability?.name}`}}</span>
+                            <template v-for="(list, index) in detail?.abilities" :key="list">
+                                <span class="desc">{{detail?.abilities?.length > 1 && index != 0 ? `, ${list?.ability?.name}` : `${list?.ability?.name}`}}</span>
                             </template>
                         </div>
                         <div class="mb-4">
@@ -97,34 +97,34 @@
             <div class="row gx-3 gy-3">
                 <div class="col-md-5">
                     <Card
-                        :name="detail.name"
+                        :name="detail?.name"
                         :align="`center`"
                         :background="`#FDED9A`"
-                        :image="detail.sprites?.other?.dream_world?.front_default ?? `https://www.freeiconspng.com/thumbs/pokeball-png/file-pokeball-png-0.png`"
+                        :image="detail?.sprites?.other?.dream_world?.front_default ?? `https://www.freeiconspng.com/thumbs/pokeball-png/file-pokeball-png-0.png`"
                     />
                 </div>
                 <div class="col-md-7">
                     <div class="card-detail">
                         <div class="mb-4">
                             <h1 class="title">Status Decreased</h1>
-                            <p class="desc">{{detail.decreased_stat.name}}</p>
+                            <p class="desc">{{detail?.decreased_stat?.name ?? 'none'}}</p>
                         </div>
                         <div class="mb-4">
                             <h1 class="title">Status Increased</h1>
-                            <p class="desc">{{detail.increased_stat.name}}</p>
+                            <p class="desc">{{detail?.increased_stat?.name ?? 'none'}}</p>
                         </div>
                         <div class="mb-4">
                             <h1 class="title">Likes Flavour</h1>
-                            <p class="desc">{{detail.likes_flavor.name}}</p>
+                            <p class="desc">{{detail?.likes_flavor?.name ?? 'none'}}</p>
                         </div>
                         <div class="mb-4">
                             <h1 class="title">Hate Flavour</h1>
-                            <p class="desc">{{detail.hates_flavor.name}}</p>
+                            <p class="desc">{{detail?.hates_flavor?.name ?? 'none'}}</p>
                         </div>
                         <div class="mb-4">
                             <h1 class="title">Move Battle Style</h1>
-                            <template v-for="(data, index) in detail?.move_battle_style_preferences" :key="data">
-                                <span class="desc">{{detail?.move_battle_style_preferences?.length > 1 && index != 0 ? `, ${data?.move_battle_style?.name} (low HP: ${data?.low_hp_preference} | high HP: ${data?.high_hp_preference})` : `${data?.move_battle_style?.name} (low HP: ${data?.low_hp_preference} | high HP: ${data?.high_hp_preference})`}}</span>
+                            <template v-for="(list, index) in detail?.move_battle_style_preferences" :key="list">
+                                <span class="desc">{{detail?.move_battle_style_preferences?.length > 1 && index != 0 ? `, ${list?.move_battle_style?.name} (low HP: ${list?.low_hp_preference} | high HP: ${list?.high_hp_preference})` : `${list?.move_battle_style?.name} (low HP: ${list?.low_hp_preference} | high HP: ${list?.high_hp_preference})`}}</span>
                             </template>
                         </div>
                     </div>
